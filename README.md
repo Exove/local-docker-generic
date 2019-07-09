@@ -8,8 +8,6 @@ This is a lihgtweight LAMP stack for local development on Docker for Mac. Total 
 
 ## Getting started
 
-Make sure you've got macOS build in firewall service enabled.
-
 MySQL credentials are in `conf/mysql/credentials.env`. Usually there's no need to change them.
 
 To make sure you've got latest images:
