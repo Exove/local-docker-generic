@@ -53,6 +53,10 @@ NONCE_SALT='U/GkE@dX@`+k6gS?nlM!YHBEAG;YX5N;S6`h)y4j9{ta<w[-t!Xm;[+/e|dof,{1'
 
 Then open http://127.0.0.1:8080/myproject/
 
+### Logs
+
+Open a new Terminal window/tab and start real-time log watch: `docker-compose logs -f`
+
 ### Xdebug
 
 Xdebug PHP extension is enabled by default. Remote debugging is disabled by default.
