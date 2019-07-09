@@ -29,7 +29,7 @@ For example to initialize [WP Bedrock](https://roots.io/bedrock/docs/installing-
 1. `composer create-project roots/bedrock myproject`
 1. `cd web`
 1. `ln -s ../myproject/web myproject`
-1. Create .env file to `projects/web/myproject/.env`:
+1. Create .env file to `projects/myproject/.env`:
 
 ```
 DB_NAME='mydb'
