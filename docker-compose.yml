@@ -6,7 +6,7 @@ services:
       - "8080:80"
     volumes:
       - type: bind
-        source: ./project
+        source: ./projects
         target: /var/www
         consistency: cached
       - ./conf/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
@@ -16,7 +16,7 @@ services:
     image: xoxoxo/php-container
     volumes:
       - type: bind
-        source: ./project
+        source: ./projects
         target: /var/www
         consistency: cached
     networks:
