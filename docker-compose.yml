@@ -22,7 +22,7 @@ services:
     networks:
       - mynetwork
   mysql:
-    image: leafney/docker-alpine-mysql
+    image: leafney/alpine-mariadb
     ports:
       - "3306:3306"
     volumes:
