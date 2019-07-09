@@ -22,7 +22,7 @@ You can use MySQL clients like mysqldump, mysql CLI and Sequel Pro on `127.0.0.1
 
 ### Example WordPress project boostrapping
 
-Place your project files under `project` directory.
+Place your project files under `projects` directory.
 
 For example to initialize WP Bedrock project:
 1. `cd projects`
