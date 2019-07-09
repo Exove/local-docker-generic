@@ -53,6 +53,12 @@ NONCE_SALT='U/GkE@dX@`+k6gS?nlM!YHBEAG;YX5N;S6`h)y4j9{ta<w[-t!Xm;[+/e|dof,{1'
 
 Then open http://127.0.0.1:8080/myproject/
 
+### Xdebug
+
+Xdebug PHP extension is enabled by default. Remote debugging is disabled by default.
+
+To enable remote debugging edit file `conf/php/xdebug.ini` and restart PHP container: `docker-compse restart php`
+
 ## Removing environment from Docker
 
 To stop and remove containers:

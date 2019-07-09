@@ -19,6 +19,7 @@ services:
         source: ./projects
         target: /var/www
         consistency: cached
+      - ./conf/php/xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini
     networks:
       - mynetwork
   mysql:
