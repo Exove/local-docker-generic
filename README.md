@@ -1,5 +1,7 @@
 # Generic LAMP local dev for Docker
 
+This is a lihgtweight LAMP stack for local development on Docker for Mac. Total download size of the images is less than 200 MB.
+
 ## Requrements
 
 - Docker for Mac 2.0+
