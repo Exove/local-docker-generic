@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  httpd:
+    image: httpd:2.4-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - type: bind
+        source: ./project
+        target: /var/www
+        consistency: cached
+      - ./conf/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    networks:
+      - mynetwork
+  php:
+    image: xoxoxo/php-container
+    volumes:
+      - type: bind
+        source: ./project
+        target: /var/www
+        consistency: cached
+    networks:
+      - mynetwork
+  mysql:
+    image: leafney/docker-alpine-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: volume
+        target: /var/lib/mysql
+    networks:
+      - mynetwork
+    env_file:
+      - conf/mysql/credentials.env
+networks:
+  mynetwork:
