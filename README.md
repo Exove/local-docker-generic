@@ -20,7 +20,7 @@ Then you can browse to http://127.0.0.1:8080/
 
 You can use MySQL clients like mysqldump, mysql CLI and Sequel Pro on `127.0.0.1:3306`.
 
-### Example WordPress project boostrapping
+### Example WordPress project bootstrapping
 
 Place your project files under `projects` directory.
 
