@@ -1,10 +1,12 @@
 # Generic LAMP local dev for Docker
 
-This is a lihgtweight LAMP stack for local development on Docker for Mac. Total download size of the images is less than 200 MB.
+This is a lihgtweight LAMP stack for local development on Docker for Mac. Total download size of the images is less than 200 MB. There's no need to build any container images locally as al images are build in Docker Hub. Fast and simple set up.
 
 ## Requrements
 
 - Docker for Mac 2.0+
+
+**Recommended:** Install [Homebrew](https://brew.sh)
 
 ## Getting started
 
@@ -18,13 +20,36 @@ To start LAMP stack:
 
 Then you can browse to http://127.0.0.1:8080/
 
+### MySQL database access
+
 You can use MySQL clients like mysqldump, mysql CLI and Sequel Pro on `127.0.0.1:3306`.
 
-Example: `mysql -h127.0.0.1 -umydbuser -pmydbpwd mydb`
+If your workstation is missing MySQL CLI tools you can install them from Homebrew:
+
+```
+brew update
+brew install mysql-client
+brew link --force mysql-client
+```
+
+In order to use WP-CLI and Drush on you local Terminal you need to add `127.0.0.1 mysql` line to */etc/hosts* file:
+
+```
+sudo namo /etc/hosts
+```
+
+Then you can call MySQL CLI for example like this: `mysql -hmysql -umydbuser -pmydbpwd mydb`
 
 ### Example WordPress project bootstrapping
 
 Place your project files under `projects` directory.
+
+Get Composer from Homebrew:
+
+```
+brew update
+brew install composer
+```
 
 For example to initialize [WP Bedrock](https://roots.io/bedrock/docs/installing-bedrock/) project:
 1. `cd projects`
@@ -51,7 +76,53 @@ LOGGED_IN_SALT='8]He1IS8UdD(v+g30ujx9;u3QRkQy*bP!kz5jUkEaG9R)|Bd1D9f51h0+`wqLr!5
 NONCE_SALT='U/GkE@dX@`+k6gS?nlM!YHBEAG;YX5N;S6`h)y4j9{ta<w[-t!Xm;[+/e|dof,{1'
 ```
 
-Then open http://127.0.0.1:8080/myproject/
+Then open http://127.0.0.1:8080/myproject/ to launch WordPress install wizard.
+
+**WP-CLI**
+
+```
+brew update
+brew install wp-cli
+```
+
+### Example Drupal 8 project bootstrapping
+
+Place your project files under `projects` directory.
+
+Get Composer from Homebrew:
+
+```
+brew update
+brew install composer
+```
+
+Install Drupal 8 core:
+
+1. `cd projects`
+1. `composer create-project drupal-composer/drupal-project:8.x-dev myproject`
+1. `cd web`
+1. `ln -s ../myproject/web myproject`
+
+Then open http://127.0.0.1:8080/myproject/ to launch Drupal install wizard.
+
+
+**Drush**
+
+Install [Drush Launcher](https://github.com/drush-ops/drush-launcher) so that you can use project spesific Drush releases.
+
+```
+curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
+chmod +x drush.phar
+sudo mv drush.phar /usr/local/bin/drush
+```
+
+Now you should be able to call `drush` command in every directory. You can for example run site install command:
+
+```
+cd projects
+cd myproject
+drush si standard --db-url=mysql://mydbuser:mydbpwd@mysql/mydb
+```
 
 ### Logs
 
