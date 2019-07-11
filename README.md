@@ -35,7 +35,7 @@ brew link --force mysql-client
 In order to use WP-CLI and Drush on you local Terminal you need to add `127.0.0.1 mysql` line to */etc/hosts* file:
 
 ```
-sudo namo /etc/hosts
+sudo nano /etc/hosts
 ```
 
 Then you can call MySQL CLI for example like this: `mysql -hmysql -umydbuser -pmydbpwd mydb`
