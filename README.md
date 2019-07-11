@@ -1,6 +1,6 @@
 # Generic LAMP local dev for Docker
 
-This is a lihgtweight LAMP stack for local development on Docker for Mac. Total download size of the images is less than 200 MB. There's no need to build any container images locally as al images are build in Docker Hub. Fast and simple set up.
+This is a lihgtweight LAMP stack for local development on Docker for Mac. Total download size of the images is less than 200 MB. There's no need to build any container images locally as all images are build in Docker Hub. Fast and simple set up.
 
 ## Requrements
 
